@@ -273,7 +273,7 @@ const NewLocation = ({
         <option value="ZWE">Zimbabwe</option>
       </select>
       <label
-        htmlFor="country-input"
+        htmlFor="state-input"
         className="block text-sm font-medium py-2 dark:text-white"
       >
         State:
