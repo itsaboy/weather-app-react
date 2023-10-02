@@ -1,0 +1,77 @@
+@media only screen and (max-width: 1475px) {
+
+    .header-container {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .main-container {
+        grid-template-areas:
+        "search-section"
+        "current-section"
+        "forecast-section";
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 2fr;
+    }
+
+}
+
+@media only screen and (max-width: 1130px) {
+
+    .weather-container {
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .forecast-data-container {
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .forecast-day-container {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 764px) {
+
+    .main-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 3fr;
+    }
+
+    .weather-container {
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .forecast-data-container {
+        grid-template-rows: repeat(5, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+    .forecast-day-container {
+        display: grid;
+        grid-template-rows: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media only screen and (max-width: 420px) {
+
+    .main-container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 2fr 5fr;
+    }
+
+    .forecast-day-container {
+        display: grid;
+        grid-template-rows: repeat(8, 1fr);
+        grid-template-columns: 1fr;
+    }
+
+}
