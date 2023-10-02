@@ -26461,7 +26461,7 @@ var NewLocation = ({
         ]
       }, undefined, true, undefined, this),
       jsx_dev_runtime2.jsxDEV("label", {
-        htmlFor: "country-input",
+        htmlFor: "state-input",
         className: "block text-sm font-medium py-2 dark:text-white",
         children: "State:"
       }, undefined, false, undefined, this),
