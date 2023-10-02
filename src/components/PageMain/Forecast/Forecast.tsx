@@ -4,7 +4,7 @@ import ForecastDayThree from "./ForecastDayThree";
 import ForecastDayFour from "./ForecastDayFour";
 import ForecastDayFive from "./ForecastDayFive";
 
-const Forecast = ({ forecast }: any) => {
+const Forecast = ({ forecast, weather }: any) => {
   return (
     <section
       id="forecast-section"
@@ -15,11 +15,11 @@ const Forecast = ({ forecast }: any) => {
           Forecast
         </h2>
         <div className="forecast-data-container">
-          <ForecastDayOne forecast={forecast} />
-          <ForecastDayTwo forecast={forecast} />
-          <ForecastDayThree forecast={forecast} />
-          <ForecastDayFour forecast={forecast} />
-          <ForecastDayFive forecast={forecast} />
+          <ForecastDayOne forecast={forecast} weather={weather} />
+          <ForecastDayTwo forecast={forecast} weather={weather} />
+          <ForecastDayThree forecast={forecast} weather={weather} />
+          <ForecastDayFour forecast={forecast} weather={weather} />
+          <ForecastDayFive forecast={forecast} weather={weather} />
         </div>
       </div>
     </section>

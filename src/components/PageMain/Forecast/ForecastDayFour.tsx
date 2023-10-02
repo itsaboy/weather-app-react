@@ -1,19 +1,19 @@
 import dayjs from "dayjs";
 
-const ForecastDayFour = ({ forecast }: any) => {
+const ForecastDayFour = ({ forecast, weather }: any) => {
   return (
     <section className="bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full">
       <div className="forecast-day-container">
         <h3 className="text-2xl text-slate-950">
           {dayjs
-            .unix(forecast.list[3].dt)
+            .unix(weather.dt)
             .add(4, "day")
             .startOf("day")
             .format("dddd")}
         </h3>
         <h3 className="text-xl text-slate-950">
           {dayjs
-            .unix(forecast.list[3].dt)
+            .unix(weather.dt)
             .add(4, "day")
             .startOf("day")
             .format("MMM-D-YYYY")}

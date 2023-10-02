@@ -22,7 +22,7 @@ const PageMain = ({
           showOutput={showOutput}
         />
         {showOutput && <Current weather={weather} />}
-        {showOutput && <Forecast forecast={forecast} />}
+        {showOutput && <Forecast forecast={forecast} weather={weather} />}
       </div>
     </main>
   );

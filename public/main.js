@@ -26814,7 +26814,7 @@ var Current_default = Current;
 // src/components/PageMain/Forecast/ForecastDayOne.tsx
 var import_dayjs2 = __toESM(require_dayjs_min(), 1);
 var jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime(), 1);
-var ForecastDayOne = ({ forecast }) => {
+var ForecastDayOne = ({ forecast, weather }) => {
   return jsx_dev_runtime5.jsxDEV("section", {
     className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full",
     children: jsx_dev_runtime5.jsxDEV("div", {
@@ -26822,11 +26822,11 @@ var ForecastDayOne = ({ forecast }) => {
       children: [
         jsx_dev_runtime5.jsxDEV("h3", {
           className: "text-2xl text-slate-950",
-          children: import_dayjs2.default.unix(forecast.list[0].dt).add(1, "day").startOf("day").format("dddd")
+          children: import_dayjs2.default.unix(weather.dt).add(1, "day").startOf("day").format("dddd")
         }, undefined, false, undefined, this),
         jsx_dev_runtime5.jsxDEV("h3", {
           className: "text-xl text-slate-950",
-          children: import_dayjs2.default.unix(forecast.list[0].dt).add(1, "day").startOf("day").format("MMM-D-YYYY")
+          children: import_dayjs2.default.unix(weather.dt).add(1, "day").startOf("day").format("MMM-D-YYYY")
         }, undefined, false, undefined, this),
         jsx_dev_runtime5.jsxDEV("h3", {
           className: "text-xl",
@@ -26881,7 +26881,7 @@ var ForecastDayOne_default = ForecastDayOne;
 // src/components/PageMain/Forecast/ForecastDayTwo.tsx
 var import_dayjs3 = __toESM(require_dayjs_min(), 1);
 var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
-var ForecastDayTwo = ({ forecast }) => {
+var ForecastDayTwo = ({ forecast, weather }) => {
   return jsx_dev_runtime6.jsxDEV("section", {
     className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full",
     children: jsx_dev_runtime6.jsxDEV("div", {
@@ -26889,11 +26889,11 @@ var ForecastDayTwo = ({ forecast }) => {
       children: [
         jsx_dev_runtime6.jsxDEV("h3", {
           className: "text-2xl text-slate-950",
-          children: import_dayjs3.default.unix(forecast.list[1].dt).add(2, "day").startOf("day").format("dddd")
+          children: import_dayjs3.default.unix(weather.dt).add(2, "day").startOf("day").format("dddd")
         }, undefined, false, undefined, this),
         jsx_dev_runtime6.jsxDEV("h3", {
           className: "text-xl text-slate-950",
-          children: import_dayjs3.default.unix(forecast.list[1].dt).add(2, "day").startOf("day").format("MMM-D-YYYY")
+          children: import_dayjs3.default.unix(weather.dt).add(2, "day").startOf("day").format("MMM-D-YYYY")
         }, undefined, false, undefined, this),
         jsx_dev_runtime6.jsxDEV("h3", {
           className: "text-xl",
@@ -26948,7 +26948,7 @@ var ForecastDayTwo_default = ForecastDayTwo;
 // src/components/PageMain/Forecast/ForecastDayThree.tsx
 var import_dayjs4 = __toESM(require_dayjs_min(), 1);
 var jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime(), 1);
-var ForecastDayThree = ({ forecast }) => {
+var ForecastDayThree = ({ forecast, weather }) => {
   return jsx_dev_runtime7.jsxDEV("section", {
     className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full",
     children: jsx_dev_runtime7.jsxDEV("div", {
@@ -26956,11 +26956,11 @@ var ForecastDayThree = ({ forecast }) => {
       children: [
         jsx_dev_runtime7.jsxDEV("h3", {
           className: "text-2xl text-slate-950",
-          children: import_dayjs4.default.unix(forecast.list[2].dt).add(3, "day").startOf("day").format("dddd")
+          children: import_dayjs4.default.unix(weather.dt).add(3, "day").startOf("day").format("dddd")
         }, undefined, false, undefined, this),
         jsx_dev_runtime7.jsxDEV("h3", {
           className: "text-xl text-slate-950",
-          children: import_dayjs4.default.unix(forecast.list[2].dt).add(3, "day").startOf("day").format("MMM-D-YYYY")
+          children: import_dayjs4.default.unix(weather.dt).add(3, "day").startOf("day").format("MMM-D-YYYY")
         }, undefined, false, undefined, this),
         jsx_dev_runtime7.jsxDEV("h3", {
           className: "text-xl",
@@ -27015,7 +27015,7 @@ var ForecastDayThree_default = ForecastDayThree;
 // src/components/PageMain/Forecast/ForecastDayFour.tsx
 var import_dayjs5 = __toESM(require_dayjs_min(), 1);
 var jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime(), 1);
-var ForecastDayFour = ({ forecast }) => {
+var ForecastDayFour = ({ forecast, weather }) => {
   return jsx_dev_runtime8.jsxDEV("section", {
     className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full",
     children: jsx_dev_runtime8.jsxDEV("div", {
@@ -27023,11 +27023,11 @@ var ForecastDayFour = ({ forecast }) => {
       children: [
         jsx_dev_runtime8.jsxDEV("h3", {
           className: "text-2xl text-slate-950",
-          children: import_dayjs5.default.unix(forecast.list[3].dt).add(4, "day").startOf("day").format("dddd")
+          children: import_dayjs5.default.unix(weather.dt).add(4, "day").startOf("day").format("dddd")
         }, undefined, false, undefined, this),
         jsx_dev_runtime8.jsxDEV("h3", {
           className: "text-xl text-slate-950",
-          children: import_dayjs5.default.unix(forecast.list[3].dt).add(4, "day").startOf("day").format("MMM-D-YYYY")
+          children: import_dayjs5.default.unix(weather.dt).add(4, "day").startOf("day").format("MMM-D-YYYY")
         }, undefined, false, undefined, this),
         jsx_dev_runtime8.jsxDEV("h3", {
           className: "text-xl",
@@ -27082,7 +27082,7 @@ var ForecastDayFour_default = ForecastDayFour;
 // src/components/PageMain/Forecast/ForecastDayFive.tsx
 var import_dayjs6 = __toESM(require_dayjs_min(), 1);
 var jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime(), 1);
-var ForecastDayFive = ({ forecast }) => {
+var ForecastDayFive = ({ forecast, weather }) => {
   return jsx_dev_runtime9.jsxDEV("section", {
     className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full",
     children: jsx_dev_runtime9.jsxDEV("div", {
@@ -27090,11 +27090,11 @@ var ForecastDayFive = ({ forecast }) => {
       children: [
         jsx_dev_runtime9.jsxDEV("h3", {
           className: "text-2xl text-slate-950",
-          children: import_dayjs6.default.unix(forecast.list[4].dt).add(5, "day").startOf("day").format("dddd")
+          children: import_dayjs6.default.unix(weather.dt).add(5, "day").startOf("day").format("dddd")
         }, undefined, false, undefined, this),
         jsx_dev_runtime9.jsxDEV("h3", {
           className: "text-xl text-slate-950",
-          children: import_dayjs6.default.unix(forecast.list[4].dt).add(5, "day").startOf("day").format("MMM-D-YYYY")
+          children: import_dayjs6.default.unix(weather.dt).add(5, "day").startOf("day").format("MMM-D-YYYY")
         }, undefined, false, undefined, this),
         jsx_dev_runtime9.jsxDEV("h3", {
           className: "text-xl",
@@ -27148,7 +27148,7 @@ var ForecastDayFive_default = ForecastDayFive;
 
 // src/components/PageMain/Forecast/Forecast.tsx
 var jsx_dev_runtime10 = __toESM(require_jsx_dev_runtime(), 1);
-var Forecast = ({ forecast }) => {
+var Forecast = ({ forecast, weather }) => {
   return jsx_dev_runtime10.jsxDEV("section", {
     id: "forecast-section",
     className: "bg-gradient-to-b from-sky-600 to-sky-800 w-full border-2 border-sky-950 rounded-2xl shadow-sky-900 shadow-lg transition ease-in-out delay-150 hover:shadow-sky-900 hover:shadow-2xl hover:translate-y-1",
@@ -27163,19 +27163,24 @@ var Forecast = ({ forecast }) => {
           className: "forecast-data-container",
           children: [
             jsx_dev_runtime10.jsxDEV(ForecastDayOne_default, {
-              forecast
+              forecast,
+              weather
             }, undefined, false, undefined, this),
             jsx_dev_runtime10.jsxDEV(ForecastDayTwo_default, {
-              forecast
+              forecast,
+              weather
             }, undefined, false, undefined, this),
             jsx_dev_runtime10.jsxDEV(ForecastDayThree_default, {
-              forecast
+              forecast,
+              weather
             }, undefined, false, undefined, this),
             jsx_dev_runtime10.jsxDEV(ForecastDayFour_default, {
-              forecast
+              forecast,
+              weather
             }, undefined, false, undefined, this),
             jsx_dev_runtime10.jsxDEV(ForecastDayFive_default, {
-              forecast
+              forecast,
+              weather
             }, undefined, false, undefined, this)
           ]
         }, undefined, true, undefined, this)
@@ -27212,7 +27217,8 @@ var PageMain = ({
           weather
         }, undefined, false, undefined, this),
         showOutput && jsx_dev_runtime11.jsxDEV(Forecast_default, {
-          forecast
+          forecast,
+          weather
         }, undefined, false, undefined, this)
       ]
     }, undefined, true, undefined, this)

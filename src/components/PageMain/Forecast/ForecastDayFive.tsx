@@ -1,14 +1,22 @@
 import dayjs from "dayjs";
 
-const ForecastDayFive = ({ forecast }: any) => {
+const ForecastDayFive = ({ forecast, weather }: any) => {
   return (
     <section className="bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full">
       <div className="forecast-day-container">
         <h3 className="text-2xl text-slate-950">
-          {dayjs.unix(forecast.list[4].dt).add(5, "day").startOf("day").format("dddd")}
+          {dayjs
+            .unix(weather.dt)
+            .add(5, "day")
+            .startOf("day")
+            .format("dddd")}
         </h3>
         <h3 className="text-xl text-slate-950">
-          {dayjs.unix(forecast.list[4].dt).add(5, "day").startOf("day").format("MMM-D-YYYY")}
+          {dayjs
+            .unix(weather.dt)
+            .add(5, "day")
+            .startOf("day")
+            .format("MMM-D-YYYY")}
         </h3>
         <h3 className="text-xl">{forecast.list[4].weather[0].main}</h3>
         {forecast.list[4].weather[0].main === "Mist" && (
@@ -38,7 +46,7 @@ const ForecastDayFive = ({ forecast }: any) => {
         <h3>{`Wind: ${forecast.list[4].wind.speed} mph`}</h3>
       </div>
     </section>
-    );
-  };
-  
-  export default ForecastDayFive;
+  );
+};
+
+export default ForecastDayFive;
