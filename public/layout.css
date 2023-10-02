@@ -16,6 +16,17 @@
     column-gap: 3rem;
 }
 
+.presearch-container {
+    display: grid;
+    grid-template-areas:
+    "search-section";
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 90%;
+    width: clamp(18rem, 50vw + 1px, 35rem);
+    margin: 3rem auto;
+}
+
 .main-container {
     display: grid;
     grid-template-areas:

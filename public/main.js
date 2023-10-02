@@ -26702,6 +26702,7 @@ var NewLocation_default = NewLocation;
 // src/components/PageMain/Search/Search.tsx
 var jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1);
 var Search = ({
+  showOutput,
   handleInputsChange,
   inputs,
   handleSearchButton
@@ -27196,15 +27197,16 @@ var PageMain = ({
   forecast
 }) => {
   return jsx_dev_runtime11.jsxDEV("main", {
-    className: "bg-gradient-to-b from-sky-100 to-sky-200 h-full",
+    className: "bg-gradient-to-b from-sky-100 to-sky-200 h-full hs-default-mode-active",
     children: jsx_dev_runtime11.jsxDEV("div", {
-      className: "main-container hs-default-mode-active",
+      className: `${showOutput ? "main-container" : "presearch-container"}`,
       children: [
         jsx_dev_runtime11.jsxDEV(Search_default, {
           handleSearchButton,
           inputs,
           newLocation,
-          handleInputsChange
+          handleInputsChange,
+          showOutput
         }, undefined, false, undefined, this),
         showOutput && jsx_dev_runtime11.jsxDEV(Current_default, {
           weather

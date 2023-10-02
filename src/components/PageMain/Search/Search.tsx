@@ -1,6 +1,7 @@
 import NewLocation from "./NewLocation";
 
 const Search = ({
+  showOutput,
   handleInputsChange,
   inputs,
   handleSearchButton,

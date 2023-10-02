@@ -12,13 +12,14 @@ const PageMain = ({
   forecast
 }: any) => {
   return (
-    <main className="bg-gradient-to-b from-sky-100 to-sky-200 h-full">
-      <div className="main-container hs-default-mode-active">
+    <main className="bg-gradient-to-b from-sky-100 to-sky-200 h-full hs-default-mode-active">
+      <div className={`${showOutput ? "main-container" : "presearch-container"}`}>
         <Search
           handleSearchButton={handleSearchButton}
           inputs={inputs}
           newLocation={newLocation}
           handleInputsChange={handleInputsChange}
+          showOutput={showOutput}
         />
         {showOutput && <Current weather={weather} />}
         {showOutput && <Forecast forecast={forecast} />}
