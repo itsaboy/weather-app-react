@@ -757,10 +757,6 @@ select {
   z-index: 50;
 }
 
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
-
 .block {
   display: block;
 }

@@ -26714,7 +26714,7 @@ var Search = ({
       className: "search-container",
       children: [
         jsx_dev_runtime3.jsxDEV("h2", {
-          className: "bg-gradient-to-b from-sky-950 to-sky-900 text-4xl text-slate-200 pt-4 h-full w-full border-b-2 rounded-t-xl border-sky-950 text-center mb-2",
+          className: "bg-gradient-to-b from-sky-950 to-sky-900 text-4xl text-slate-200 pt-4 h-full w-full border-b-2 rounded-t-xl border-sky-950 text-center",
           children: "Search"
         }, undefined, false, undefined, this),
         jsx_dev_runtime3.jsxDEV("section", {
