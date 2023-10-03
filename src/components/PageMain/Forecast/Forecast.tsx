@@ -14,7 +14,7 @@ const Forecast = ({ forecast, weather }: any) => {
         <h2 className="bg-gradient-to-b from-sky-950 to-sky-900 text-4xl text-slate-200 pt-4 h-full w-full border-b-2 rounded-t-xl border-sky-950 text-center">
           Forecast
         </h2>
-        <div className="forecast-data-container">
+        <div className="forecast-data-container text-slate-950">
           <ForecastDayOne forecast={forecast} weather={weather} />
           <ForecastDayTwo forecast={forecast} weather={weather} />
           <ForecastDayThree forecast={forecast} weather={weather} />

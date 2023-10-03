@@ -4,7 +4,7 @@ const Current = ({ weather }: any) => {
   return (
     <section
       id="current-seciton"
-      className="bg-gradient-to-b from-sky-400 to-sky-500 w-full border-2 border-sky-950 rounded-2xl shadow-sky-900 shadow-lg transition ease-in-out delay-150 hover:shadow-sky-900 hover:shadow-2xl hover:translate-y-1"
+      className="text-slate-950 bg-gradient-to-b from-sky-400 to-sky-500 w-full border-2 border-sky-950 rounded-2xl shadow-sky-900 shadow-lg transition ease-in-out delay-150 hover:shadow-sky-900 hover:shadow-2xl hover:translate-y-1"
     >
       <div className="current-container">
         <h2 className="bg-gradient-to-b from-sky-950 to-sky-900 text-4xl text-slate-200 pt-4 h-full w-full border-b-2 rounded-t-xl border-sky-950 text-center">

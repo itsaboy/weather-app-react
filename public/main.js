@@ -26691,7 +26691,7 @@ var NewLocation = ({
       jsx_dev_runtime2.jsxDEV("br", {}, undefined, false, undefined, this),
       jsx_dev_runtime2.jsxDEV("button", {
         type: "submit",
-        className: "w-24 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-blue-100 border border-sky-600 font-semibold text-blue-600 hover:text-white hover:bg-blue-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 shadow-lg active:translate-y-1 active:shadow-none disabled:bg-slate-400 disabled:cursor-not-allowed",
+        className: "w-24 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-blue-100 border border-sky-600 font-semibold text-blue-600 hover:text-blue-950 hover:bg-blue-200 focus:outline-none focus:ring-2 ring-offset-white focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 shadow-lg active:translate-y-1 active:shadow-none disabled:bg-slate-400 disabled:cursor-not-allowed",
         disabled: inputs.city === "" ? true : error,
         children: "Search"
       }, undefined, false, undefined, this)
@@ -26739,7 +26739,7 @@ var jsx_dev_runtime4 = __toESM(require_jsx_dev_runtime(), 1);
 var Current = ({ weather }) => {
   return jsx_dev_runtime4.jsxDEV("section", {
     id: "current-seciton",
-    className: "bg-gradient-to-b from-sky-400 to-sky-500 w-full border-2 border-sky-950 rounded-2xl shadow-sky-900 shadow-lg transition ease-in-out delay-150 hover:shadow-sky-900 hover:shadow-2xl hover:translate-y-1",
+    className: "text-slate-950 bg-gradient-to-b from-sky-400 to-sky-500 w-full border-2 border-sky-950 rounded-2xl shadow-sky-900 shadow-lg transition ease-in-out delay-150 hover:shadow-sky-900 hover:shadow-2xl hover:translate-y-1",
     children: jsx_dev_runtime4.jsxDEV("div", {
       className: "current-container",
       children: [
@@ -26819,7 +26819,7 @@ var import_dayjs2 = __toESM(require_dayjs_min(), 1);
 var jsx_dev_runtime5 = __toESM(require_jsx_dev_runtime(), 1);
 var ForecastDayOne = ({ forecast, weather }) => {
   return jsx_dev_runtime5.jsxDEV("section", {
-    className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full",
+    className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border text-md text-slate-950 border-blue-950 rounded-2xl w-full",
     children: jsx_dev_runtime5.jsxDEV("div", {
       className: "forecast-day-container",
       children: [
@@ -26886,7 +26886,7 @@ var import_dayjs3 = __toESM(require_dayjs_min(), 1);
 var jsx_dev_runtime6 = __toESM(require_jsx_dev_runtime(), 1);
 var ForecastDayTwo = ({ forecast, weather }) => {
   return jsx_dev_runtime6.jsxDEV("section", {
-    className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full",
+    className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border text-md text-slate-950 border-blue-950 rounded-2xl w-full",
     children: jsx_dev_runtime6.jsxDEV("div", {
       className: "forecast-day-container",
       children: [
@@ -26953,7 +26953,7 @@ var import_dayjs4 = __toESM(require_dayjs_min(), 1);
 var jsx_dev_runtime7 = __toESM(require_jsx_dev_runtime(), 1);
 var ForecastDayThree = ({ forecast, weather }) => {
   return jsx_dev_runtime7.jsxDEV("section", {
-    className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full",
+    className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border text-md text-slate-950 border-blue-950 rounded-2xl w-full",
     children: jsx_dev_runtime7.jsxDEV("div", {
       className: "forecast-day-container",
       children: [
@@ -27020,7 +27020,7 @@ var import_dayjs5 = __toESM(require_dayjs_min(), 1);
 var jsx_dev_runtime8 = __toESM(require_jsx_dev_runtime(), 1);
 var ForecastDayFour = ({ forecast, weather }) => {
   return jsx_dev_runtime8.jsxDEV("section", {
-    className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full",
+    className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border text-md text-slate-950 border-blue-950 rounded-2xl w-full",
     children: jsx_dev_runtime8.jsxDEV("div", {
       className: "forecast-day-container",
       children: [
@@ -27087,7 +27087,7 @@ var import_dayjs6 = __toESM(require_dayjs_min(), 1);
 var jsx_dev_runtime9 = __toESM(require_jsx_dev_runtime(), 1);
 var ForecastDayFive = ({ forecast, weather }) => {
   return jsx_dev_runtime9.jsxDEV("section", {
-    className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border-2 text-md text-slate-950 border-blue-950 rounded-2xl w-full",
+    className: "bg-gradient-to-b from-blue-300 to-blue-200 p-4 border text-md text-slate-950 border-blue-950 rounded-2xl w-full",
     children: jsx_dev_runtime9.jsxDEV("div", {
       className: "forecast-day-container",
       children: [
@@ -27163,7 +27163,7 @@ var Forecast = ({ forecast, weather }) => {
           children: "Forecast"
         }, undefined, false, undefined, this),
         jsx_dev_runtime10.jsxDEV("div", {
-          className: "forecast-data-container",
+          className: "forecast-data-container text-slate-950",
           children: [
             jsx_dev_runtime10.jsxDEV(ForecastDayOne_default, {
               forecast,
@@ -27315,7 +27315,6 @@ var App = () => {
         };
         setNewLocation(currentLocation);
         getCurrentWeather(geoData[0]);
-        getForecast(geoData[0]);
       } else {
         setError(true);
       }
@@ -27333,7 +27332,6 @@ var App = () => {
         };
         setNewLocation(currentLocation);
         getCurrentWeather(geoData[0]);
-        getForecast(geoData[0]);
       } else {
         setError(true);
       }
@@ -27347,13 +27345,12 @@ var App = () => {
     const currentData = await res.json();
     if (res.status === 200) {
       setWeather(currentData);
+      getForecast(longitude, latitude);
     } else {
       setError(true);
     }
   };
-  const getForecast = async (geoData) => {
-    const latitude = geoData.lat;
-    const longitude = geoData.lon;
+  const getForecast = async (longitude, latitude) => {
     const req = `${endpoint}/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${key}`;
     const res = await fetch(req);
     const forecastData = await res.json();

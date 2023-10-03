@@ -59,7 +59,6 @@ const App = () => {
 
         setNewLocation(currentLocation);
         getCurrentWeather(geoData[0]);
-        getForecast(geoData[0]);
       } else {
         setError(true);
       }
@@ -80,7 +79,6 @@ const App = () => {
 
         setNewLocation(currentLocation);
         getCurrentWeather(geoData[0]);
-        getForecast(geoData[0]);
       } else {
         setError(true);
       }
@@ -97,15 +95,13 @@ const App = () => {
 
     if (res.status === 200) {
       setWeather(currentData);
+      getForecast(longitude ,latitude);
     } else {
       setError(true);
     }
   };
 
-  const getForecast = async (geoData: any) => {
-    const latitude = geoData.lat;
-    const longitude = geoData.lon;
-
+  const getForecast = async (longitude: number, latitude: number) => {
     const req = `${endpoint}/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${key}`;
     const res = await fetch(req);
     const forecastData = await res.json();
