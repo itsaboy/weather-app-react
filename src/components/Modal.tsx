@@ -9,7 +9,7 @@ const Modal = ({ setError }: any) => {
         <button
           type="button"
           onClick={() => {setError(false)}}
-          className="w-24 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-red-100 border border-transparent font-semibold text-red-500 hover:text-white hover:bg-red-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 shadow-lg active:translate-y-1 active:shadow-none disabled:bg-slate-400 disabled:cursor-not-allowed"
+          className="w-24 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-red-100 border border-red-800 font-semibold text-red-500 hover:text-white hover:bg-red-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 shadow-lg active:translate-y-1 active:shadow-none disabled:bg-slate-400 disabled:cursor-not-allowed"
         >
           Close
         </button>

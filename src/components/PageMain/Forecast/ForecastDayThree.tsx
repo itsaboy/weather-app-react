@@ -6,14 +6,14 @@ const ForecastDayThree = ({ forecast, weather }: any) => {
       <div className="forecast-day-container">
         <h3 className="text-2xl text-slate-950">
           {dayjs
-            .unix(weather.dt)
+            .unix(weather.dt + weather.timezone)
             .add(3, "day")
             .startOf("day")
             .format("dddd")}
         </h3>
         <h3 className="text-xl text-slate-950">
           {dayjs
-            .unix(weather.dt)
+            .unix(weather.dt + weather.timezone)
             .add(3, "day")
             .startOf("day")
             .format("MMM-D-YYYY")}

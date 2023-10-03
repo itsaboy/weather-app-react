@@ -26691,7 +26691,7 @@ var NewLocation = ({
       jsx_dev_runtime2.jsxDEV("br", {}, undefined, false, undefined, this),
       jsx_dev_runtime2.jsxDEV("button", {
         type: "submit",
-        className: "w-24 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-blue-100 border border-transparent font-semibold text-blue-500 hover:text-white hover:bg-blue-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 shadow-lg active:translate-y-1 active:shadow-none disabled:bg-slate-400 disabled:cursor-not-allowed",
+        className: "w-24 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-blue-100 border border-sky-600 font-semibold text-blue-600 hover:text-white hover:bg-blue-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 shadow-lg active:translate-y-1 active:shadow-none disabled:bg-slate-400 disabled:cursor-not-allowed",
         disabled: inputs.city === "" ? true : error,
         children: "Search"
       }, undefined, false, undefined, this)
@@ -26706,11 +26706,12 @@ var Search = ({
   handleInputsChange,
   inputs,
   handleSearchButton,
-  error
+  error,
+  showOutput
 }) => {
   return jsx_dev_runtime3.jsxDEV("aside", {
     id: "search-section",
-    className: "bg-gradient-to-b from-sky-300 to-sky-400 w-full border-2 border-sky-950 rounded-2xl shadow-sky-900 shadow-lg transition ease-in-out delay-150 hover:shadow-sky-900 hover:shadow-2xl hover:translate-y-1 justify-self-center self-start pb-4",
+    className: `bg-gradient-to-b from-sky-300 to-sky-400 w-full pb-4 border-2 border-sky-950 rounded-2xl shadow-sky-900 shadow-lg transition ease-in-out delay-150 hover:shadow-sky-900 hover:shadow-2xl hover:translate-y-1 justify-self-center ${showOutput ? "self-start" : "self-center"}`,
     children: jsx_dev_runtime3.jsxDEV("div", {
       className: "search-container",
       children: [
@@ -26747,62 +26748,62 @@ var Current = ({ weather }) => {
           children: "Current"
         }, undefined, false, undefined, this),
         jsx_dev_runtime4.jsxDEV("div", {
-          className: "weather-container",
+          className: "weather-container p-2",
           children: [
             jsx_dev_runtime4.jsxDEV("h3", {
               className: "text-2xl text-slate-950",
-              children: import_dayjs.default.unix(weather.dt).format("dddd")
+              children: import_dayjs.default.unix(weather.dt + weather.timezone).format("dddd")
             }, undefined, false, undefined, this),
             jsx_dev_runtime4.jsxDEV("h3", {
               className: "text-2xl text-slate-950",
-              children: import_dayjs.default.unix(weather.dt).format("MMM-D-YYYY")
+              children: import_dayjs.default.unix(weather.dt + weather.timezone).format("MMM-D-YYYY")
             }, undefined, false, undefined, this),
             jsx_dev_runtime4.jsxDEV("h3", {
               className: "text-2xl text-slate-950",
               children: weather.weather[0].main
             }, undefined, false, undefined, this),
             weather.weather[0].main === "Mist" && jsx_dev_runtime4.jsxDEV("img", {
-              className: "w-24",
+              className: "w-20",
               src: "/public/icons/misty.svg"
             }, undefined, false, undefined, this),
             weather.weather[0].main === "Clear" && jsx_dev_runtime4.jsxDEV("img", {
-              className: "w-24",
+              className: "w-20",
               src: "/public/icons/sunny.svg"
             }, undefined, false, undefined, this),
             weather.weather[0].main === "Clouds" && jsx_dev_runtime4.jsxDEV("img", {
-              className: "w-24",
+              className: "w-20",
               src: "/public/icons/cloudy.svg"
             }, undefined, false, undefined, this),
             weather.weather[0].main === "Rain" && jsx_dev_runtime4.jsxDEV("img", {
-              className: "w-24",
+              className: "w-20",
               src: "/public/icons/rainy.svg"
             }, undefined, false, undefined, this),
             weather.weather[0].main === "Thunderstorms" && jsx_dev_runtime4.jsxDEV("img", {
-              className: "w-24",
+              className: "w-20",
               src: "/public/icons/stormy.svg"
             }, undefined, false, undefined, this),
             weather.weather[0].main === "Snow" && jsx_dev_runtime4.jsxDEV("img", {
-              className: "w-24",
+              className: "w-20",
               src: "/public/icons/snowy.svg"
             }, undefined, false, undefined, this),
             weather.weather[0].main === "Haze" && jsx_dev_runtime4.jsxDEV("img", {
-              className: "w-24",
+              className: "w-20",
               src: "/public/icons/hazy.svg"
             }, undefined, false, undefined, this),
             jsx_dev_runtime4.jsxDEV("h3", {
-              className: "text-2xl text-slate-950",
+              className: "text-xl text-slate-950",
               children: `Temp: ${weather.main.temp.toFixed(0)}\xB0 F`
             }, undefined, false, undefined, this),
             jsx_dev_runtime4.jsxDEV("h3", {
-              className: "text-2xl text-slate-950",
+              className: "text-xl text-slate-950",
               children: `Feels: ${weather.main.feels_like.toFixed(0)}\xB0 F`
             }, undefined, false, undefined, this),
             jsx_dev_runtime4.jsxDEV("h3", {
-              className: "text-2xl text-slate-950",
+              className: "text-xl text-slate-950",
               children: `Humidity: ${weather.main.humidity}%`
             }, undefined, false, undefined, this),
             jsx_dev_runtime4.jsxDEV("h3", {
-              className: "text-2xl text-slate-950",
+              className: "text-xl text-slate-950",
               children: `Wind: ${weather.wind.speed} mph`
             }, undefined, false, undefined, this)
           ]
@@ -26824,11 +26825,11 @@ var ForecastDayOne = ({ forecast, weather }) => {
       children: [
         jsx_dev_runtime5.jsxDEV("h3", {
           className: "text-2xl text-slate-950",
-          children: import_dayjs2.default.unix(weather.dt).add(1, "day").startOf("day").format("dddd")
+          children: import_dayjs2.default.unix(weather.dt + weather.timezone).add(1, "day").startOf("day").format("dddd")
         }, undefined, false, undefined, this),
         jsx_dev_runtime5.jsxDEV("h3", {
           className: "text-xl text-slate-950",
-          children: import_dayjs2.default.unix(weather.dt).add(1, "day").startOf("day").format("MMM-D-YYYY")
+          children: import_dayjs2.default.unix(weather.dt + weather.timezone).add(1, "day").startOf("day").format("MMM-D-YYYY")
         }, undefined, false, undefined, this),
         jsx_dev_runtime5.jsxDEV("h3", {
           className: "text-xl",
@@ -26891,11 +26892,11 @@ var ForecastDayTwo = ({ forecast, weather }) => {
       children: [
         jsx_dev_runtime6.jsxDEV("h3", {
           className: "text-2xl text-slate-950",
-          children: import_dayjs3.default.unix(weather.dt).add(2, "day").startOf("day").format("dddd")
+          children: import_dayjs3.default.unix(weather.dt + weather.timezone).add(2, "day").startOf("day").format("dddd")
         }, undefined, false, undefined, this),
         jsx_dev_runtime6.jsxDEV("h3", {
           className: "text-xl text-slate-950",
-          children: import_dayjs3.default.unix(weather.dt).add(2, "day").startOf("day").format("MMM-D-YYYY")
+          children: import_dayjs3.default.unix(weather.dt + weather.timezone).add(2, "day").startOf("day").format("MMM-D-YYYY")
         }, undefined, false, undefined, this),
         jsx_dev_runtime6.jsxDEV("h3", {
           className: "text-xl",
@@ -26958,11 +26959,11 @@ var ForecastDayThree = ({ forecast, weather }) => {
       children: [
         jsx_dev_runtime7.jsxDEV("h3", {
           className: "text-2xl text-slate-950",
-          children: import_dayjs4.default.unix(weather.dt).add(3, "day").startOf("day").format("dddd")
+          children: import_dayjs4.default.unix(weather.dt + weather.timezone).add(3, "day").startOf("day").format("dddd")
         }, undefined, false, undefined, this),
         jsx_dev_runtime7.jsxDEV("h3", {
           className: "text-xl text-slate-950",
-          children: import_dayjs4.default.unix(weather.dt).add(3, "day").startOf("day").format("MMM-D-YYYY")
+          children: import_dayjs4.default.unix(weather.dt + weather.timezone).add(3, "day").startOf("day").format("MMM-D-YYYY")
         }, undefined, false, undefined, this),
         jsx_dev_runtime7.jsxDEV("h3", {
           className: "text-xl",
@@ -27025,11 +27026,11 @@ var ForecastDayFour = ({ forecast, weather }) => {
       children: [
         jsx_dev_runtime8.jsxDEV("h3", {
           className: "text-2xl text-slate-950",
-          children: import_dayjs5.default.unix(weather.dt).add(4, "day").startOf("day").format("dddd")
+          children: import_dayjs5.default.unix(weather.dt + weather.timezone).add(4, "day").startOf("day").format("dddd")
         }, undefined, false, undefined, this),
         jsx_dev_runtime8.jsxDEV("h3", {
           className: "text-xl text-slate-950",
-          children: import_dayjs5.default.unix(weather.dt).add(4, "day").startOf("day").format("MMM-D-YYYY")
+          children: import_dayjs5.default.unix(weather.dt + weather.timezone).add(4, "day").startOf("day").format("MMM-D-YYYY")
         }, undefined, false, undefined, this),
         jsx_dev_runtime8.jsxDEV("h3", {
           className: "text-xl",
@@ -27092,11 +27093,11 @@ var ForecastDayFive = ({ forecast, weather }) => {
       children: [
         jsx_dev_runtime9.jsxDEV("h3", {
           className: "text-2xl text-slate-950",
-          children: import_dayjs6.default.unix(weather.dt).add(5, "day").startOf("day").format("dddd")
+          children: import_dayjs6.default.unix(weather.dt + weather.timezone).add(5, "day").startOf("day").format("dddd")
         }, undefined, false, undefined, this),
         jsx_dev_runtime9.jsxDEV("h3", {
           className: "text-xl text-slate-950",
-          children: import_dayjs6.default.unix(weather.dt).add(5, "day").startOf("day").format("MMM-D-YYYY")
+          children: import_dayjs6.default.unix(weather.dt + weather.timezone).add(5, "day").startOf("day").format("MMM-D-YYYY")
         }, undefined, false, undefined, this),
         jsx_dev_runtime9.jsxDEV("h3", {
           className: "text-xl",
@@ -27263,7 +27264,7 @@ var Modal = ({ setError }) => {
           onClick: () => {
             setError(false);
           },
-          className: "w-24 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-red-100 border border-transparent font-semibold text-red-500 hover:text-white hover:bg-red-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 shadow-lg active:translate-y-1 active:shadow-none disabled:bg-slate-400 disabled:cursor-not-allowed",
+          className: "w-24 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-red-100 border border-red-800 font-semibold text-red-500 hover:text-white hover:bg-red-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 shadow-lg active:translate-y-1 active:shadow-none disabled:bg-slate-400 disabled:cursor-not-allowed",
           children: "Close"
         }, undefined, false, undefined, this)
       ]
