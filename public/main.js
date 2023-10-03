@@ -27344,68 +27344,39 @@ var App = () => {
   };
   const handleSearchButton = (event) => {
     event.preventDefault();
-    getGeoData(inputs);
+    getData(inputs);
   };
-  const endpoint = "https://api.openweathermap.org";
-  const key = "fd03838b9b2723c3ea2712dc8e4df0e6";
-  const getGeoData = async (data) => {
-    if (data.country !== "USA") {
-      const req = `${endpoint}/geo/1.0/direct?q=${data.city},${data.country}&appid=${key}`;
-      const res = await fetch(req);
-      const geoData = await res.json();
-      if (res.status === 200 && !geoData[0]) {
+  const getData = async (data) => {
+    const req = `https://www.api-of-all-trades.net?city=${data.city}&state=${data.state}&country=${data.country}`;
+    const res = await fetch(req);
+    const geoData = await res.json();
+    if (res.status === 200) {
+      if (geoData[0] === "") {
+        setShowOutput(false);
         setError(true);
-      } else if (res.status === 200) {
+      } else if (geoData[0].country === "USA") {
         let currentLocation = {
-          country: data.country,
+          country: geoData[0].country,
+          state: geoData[0].state,
+          city: geoData[0].city
+        };
+        setNewLocation(currentLocation);
+        setWeather(geoData[1]);
+        setForecast(geoData[2]);
+        setShowOutput(true);
+      } else if (geoData[0].country !== "USA") {
+        let currentLocation = {
+          country: geoData[0].country,
           state: null,
-          city: geoData[0].name
+          city: geoData[0].city
         };
         setNewLocation(currentLocation);
-        getCurrentWeather(geoData[0]);
-      } else {
-        setError(true);
+        setWeather(geoData[1]);
+        setForecast(geoData[2]);
+        setShowOutput(true);
       }
-    } else if (data.country === "USA") {
-      const req = `${endpoint}/geo/1.0/direct?q=${data.city},${data.state},${data.country}&appid=${key}`;
-      const res = await fetch(req);
-      const geoData = await res.json();
-      if (res.status === 200 && !geoData[0]) {
-        setError(true);
-      } else if (res.status === 200) {
-        let currentLocation = {
-          country: data.country,
-          state: data.state,
-          city: geoData[0].name
-        };
-        setNewLocation(currentLocation);
-        getCurrentWeather(geoData[0]);
-      } else {
-        setError(true);
-      }
-    }
-  };
-  const getCurrentWeather = async (geoData) => {
-    const latitude = geoData.lat;
-    const longitude = geoData.lon;
-    const req = `${endpoint}/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${key}`;
-    const res = await fetch(req);
-    const currentData = await res.json();
-    if (res.status === 200) {
-      setWeather(currentData);
-      getForecast(longitude, latitude);
     } else {
-      setError(true);
-    }
-  };
-  const getForecast = async (longitude, latitude) => {
-    const req = `${endpoint}/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${key}`;
-    const res = await fetch(req);
-    const forecastData = await res.json();
-    if (res.status === 200) {
-      setForecast(forecastData);
-      setShowOutput(true);
-    } else {
+      setShowOutput(false);
       setError(true);
     }
   };
