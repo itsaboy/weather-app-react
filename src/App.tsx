@@ -47,9 +47,6 @@ const App = () => {
       const res = await fetch(req);
       const geoData = await res.json();
 
-      console.log(res.status);
-      console.log(geoData);
-
       if (res.status === 200 && !geoData[0]) {
         setError(true);
       } else if (res.status === 200) {
@@ -70,9 +67,6 @@ const App = () => {
       const req = `${endpoint}/geo/1.0/direct?q=${data.city},${data.state},${data.country}&appid=${key}`;
       const res = await fetch(req);
       const geoData = await res.json();
-
-      console.log(res.status);
-      console.log(geoData);
 
       if (res.status === 200 && !geoData[0]) {
         setError(true);
