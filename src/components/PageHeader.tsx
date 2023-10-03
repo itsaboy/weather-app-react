@@ -1,7 +1,7 @@
-const PageHeader = ({ showOutput, newLocation }: any) => {
+const PageHeader = ({ showOutput, newLocation, error }: any) => {
   return (
     <header className="text-center bg-gradient-to-b from-sky-950 to-sky-800 border-b-4 border-sky-950">
-      <div className="header-container">
+      <div className={`header-container ${error ? "opacity-50" : "opacity-100"}`}>
         <h1 className="text-6xl text-blue-100 font-semibold xl:justify-self-start xl:self-center py-8">
           <span className="text-red-200">W</span>orld <span className="text-green-200">W</span>ide <span className="text-blue-200">W</span>eather
         </h1>

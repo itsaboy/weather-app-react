@@ -2,6 +2,7 @@ const NewLocation = ({
   handleInputsChange,
   inputs,
   handleSearchButton,
+  error
 }: any) => {
   return (
     <form className="new-container" onSubmit={handleSearchButton}>
@@ -354,7 +355,7 @@ const NewLocation = ({
       <button
         type="submit"
         className="w-24 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-blue-100 border border-transparent font-semibold text-blue-500 hover:text-white hover:bg-blue-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 shadow-lg active:translate-y-1 active:shadow-none disabled:bg-slate-400 disabled:cursor-not-allowed"
-        disabled={inputs.city === "" ? true : false}
+        disabled={inputs.city === "" ? true : false || error}
       >
         Search
       </button>

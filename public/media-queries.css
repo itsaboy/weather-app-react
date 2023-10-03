@@ -11,12 +11,21 @@
         "current-section"
         "forecast-section";
         grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 2fr;
+        grid-template-rows: repeat(3, 1fr);
     }
 
 }
 
 @media only screen and (max-width: 1130px) {
+
+    .main-container {
+        grid-template-areas:
+        "search-section"
+        "current-section"
+        "forecast-section";
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(2, 1fr) 2fr;
+    }
 
     .weather-container {
         grid-template-rows: repeat(4, 1fr);

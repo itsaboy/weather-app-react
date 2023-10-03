@@ -9,17 +9,19 @@ const PageMain = ({
   handleInputsChange,
   handleSearchButton,
   weather,
-  forecast
+  forecast,
+  error
 }: any) => {
   return (
     <main className="bg-gradient-to-b from-sky-100 to-sky-200 h-full hs-default-mode-active">
-      <div className={`${showOutput ? "main-container" : "presearch-container"}`}>
+      <div className={`${showOutput ? "main-container" : "presearch-container"} ${error ? "opacity-50" : "opacity-100"}`}>
         <Search
           handleSearchButton={handleSearchButton}
           inputs={inputs}
           newLocation={newLocation}
           handleInputsChange={handleInputsChange}
           showOutput={showOutput}
+          error={error}
         />
         {showOutput && <Current weather={weather} />}
         {showOutput && <Forecast forecast={forecast} weather={weather} />}

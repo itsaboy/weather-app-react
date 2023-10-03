@@ -25386,11 +25386,11 @@ var import_react = __toESM(require_react(), 1);
 
 // src/components/PageHeader.tsx
 var jsx_dev_runtime = __toESM(require_jsx_dev_runtime(), 1);
-var PageHeader = ({ showOutput, newLocation }) => {
+var PageHeader = ({ showOutput, newLocation, error }) => {
   return jsx_dev_runtime.jsxDEV("header", {
     className: "text-center bg-gradient-to-b from-sky-950 to-sky-800 border-b-4 border-sky-950",
     children: jsx_dev_runtime.jsxDEV("div", {
-      className: "header-container",
+      className: `header-container ${error ? "opacity-50" : "opacity-100"}`,
       children: [
         jsx_dev_runtime.jsxDEV("h1", {
           className: "text-6xl text-blue-100 font-semibold xl:justify-self-start xl:self-center py-8",
@@ -25433,7 +25433,8 @@ var jsx_dev_runtime2 = __toESM(require_jsx_dev_runtime(), 1);
 var NewLocation = ({
   handleInputsChange,
   inputs,
-  handleSearchButton
+  handleSearchButton,
+  error
 }) => {
   return jsx_dev_runtime2.jsxDEV("form", {
     className: "new-container",
@@ -26691,7 +26692,7 @@ var NewLocation = ({
       jsx_dev_runtime2.jsxDEV("button", {
         type: "submit",
         className: "w-24 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-blue-100 border border-transparent font-semibold text-blue-500 hover:text-white hover:bg-blue-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-blue-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 shadow-lg active:translate-y-1 active:shadow-none disabled:bg-slate-400 disabled:cursor-not-allowed",
-        disabled: inputs.city === "" ? true : false,
+        disabled: inputs.city === "" ? true : error,
         children: "Search"
       }, undefined, false, undefined, this)
     ]
@@ -26702,10 +26703,10 @@ var NewLocation_default = NewLocation;
 // src/components/PageMain/Search/Search.tsx
 var jsx_dev_runtime3 = __toESM(require_jsx_dev_runtime(), 1);
 var Search = ({
-  showOutput,
   handleInputsChange,
   inputs,
-  handleSearchButton
+  handleSearchButton,
+  error
 }) => {
   return jsx_dev_runtime3.jsxDEV("aside", {
     id: "search-section",
@@ -26721,7 +26722,8 @@ var Search = ({
           children: jsx_dev_runtime3.jsxDEV(NewLocation_default, {
             handleInputsChange,
             inputs,
-            handleSearchButton
+            handleSearchButton,
+            error
           }, undefined, false, undefined, this)
         }, undefined, false, undefined, this)
       ]
@@ -27199,19 +27201,21 @@ var PageMain = ({
   handleInputsChange,
   handleSearchButton,
   weather,
-  forecast
+  forecast,
+  error
 }) => {
   return jsx_dev_runtime11.jsxDEV("main", {
     className: "bg-gradient-to-b from-sky-100 to-sky-200 h-full hs-default-mode-active",
     children: jsx_dev_runtime11.jsxDEV("div", {
-      className: `${showOutput ? "main-container" : "presearch-container"}`,
+      className: `${showOutput ? "main-container" : "presearch-container"} ${error ? "opacity-50" : "opacity-100"}`,
       children: [
         jsx_dev_runtime11.jsxDEV(Search_default, {
           handleSearchButton,
           inputs,
           newLocation,
           handleInputsChange,
-          showOutput
+          showOutput,
+          error
         }, undefined, false, undefined, this),
         showOutput && jsx_dev_runtime11.jsxDEV(Current_default, {
           weather
@@ -27228,15 +27232,48 @@ var PageMain_default = PageMain;
 
 // src/components/PageFooter.tsx
 var jsx_dev_runtime12 = __toESM(require_jsx_dev_runtime(), 1);
-var PageFooter = () => {
+var PageFooter = ({ error }) => {
   return jsx_dev_runtime12.jsxDEV("footer", {
-    className: "bg-gradient-to-b from-sky-200 to-sky-300"
+    className: "bg-gradient-to-b from-sky-200 to-sky-400",
+    children: jsx_dev_runtime12.jsxDEV("div", {
+      className: `${error ? "opacity-50" : "opacity-100"}`
+    }, undefined, false, undefined, this)
   }, undefined, false, undefined, this);
 };
 var PageFooter_default = PageFooter;
 
-// src/App.tsx
+// src/components/Modal.tsx
 var jsx_dev_runtime13 = __toESM(require_jsx_dev_runtime(), 1);
+var Modal = ({ setError }) => {
+  return jsx_dev_runtime13.jsxDEV("section", {
+    className: "fixed bg-red-200 border-2 border-red-950 rounded-2xl sm:w-96 sm:h-64 w-5/6 h-1/2 m-auto inset-0 shadow-red-900 shadow-2xl",
+    children: jsx_dev_runtime13.jsxDEV("div", {
+      className: "modal-container",
+      children: [
+        jsx_dev_runtime13.jsxDEV("h2", {
+          className: "bg-gradient-to-b from-red-950 to-red-900 text-2xl text-slate-200 pt-4 h-full w-full border-b-2 rounded-t-xl border-red-950 text-center",
+          children: "Error"
+        }, undefined, false, undefined, this),
+        jsx_dev_runtime13.jsxDEV("h3", {
+          className: "text-center text-xl",
+          children: "Something went wrong!"
+        }, undefined, false, undefined, this),
+        jsx_dev_runtime13.jsxDEV("button", {
+          type: "button",
+          onClick: () => {
+            setError(false);
+          },
+          className: "w-24 py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md bg-red-100 border border-transparent font-semibold text-red-500 hover:text-white hover:bg-red-100 focus:outline-none focus:ring-2 ring-offset-white focus:ring-red-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800 shadow-lg active:translate-y-1 active:shadow-none disabled:bg-slate-400 disabled:cursor-not-allowed",
+          children: "Close"
+        }, undefined, false, undefined, this)
+      ]
+    }, undefined, true, undefined, this)
+  }, undefined, false, undefined, this);
+};
+var Modal_default = Modal;
+
+// src/App.tsx
+var jsx_dev_runtime14 = __toESM(require_jsx_dev_runtime(), 1);
 var App = () => {
   const [inputs, setInputs] = import_react.useState({
     country: "USA",
@@ -27247,6 +27284,7 @@ var App = () => {
   const [newLocation, setNewLocation] = import_react.useState({});
   const [weather, setWeather] = import_react.useState([]);
   const [forecast, setForecast] = import_react.useState([]);
+  const [error, setError] = import_react.useState(false);
   const handleInputsChange = (event) => {
     setInputs((lastInputs) => {
       return {
@@ -27266,30 +27304,42 @@ var App = () => {
       const req = `${endpoint}/geo/1.0/direct?q=${data.city},${data.country}&appid=${key}`;
       const res = await fetch(req);
       const geoData = await res.json();
-      let currentLocation = {
-        country: data.country,
-        state: null,
-        city: geoData[0].name,
-        id: crypto.randomUUID().toString()
-      };
-      setNewLocation(currentLocation);
-      getCurrentWeather(geoData[0]);
-      getForecast(geoData[0]);
+      console.log(res.status);
+      console.log(geoData);
+      if (res.status === 200 && !geoData[0]) {
+        setError(true);
+      } else if (res.status === 200) {
+        let currentLocation = {
+          country: data.country,
+          state: null,
+          city: geoData[0].name
+        };
+        setNewLocation(currentLocation);
+        getCurrentWeather(geoData[0]);
+        getForecast(geoData[0]);
+      } else {
+        setError(true);
+      }
     } else if (data.country === "USA") {
       const req = `${endpoint}/geo/1.0/direct?q=${data.city},${data.state},${data.country}&appid=${key}`;
       const res = await fetch(req);
       const geoData = await res.json();
-      let currentLocation = {
-        country: data.country,
-        state: data.state,
-        city: geoData[0].name,
-        id: crypto.randomUUID().toString()
-      };
-      setNewLocation(currentLocation);
-      getCurrentWeather(geoData[0]);
-      getForecast(geoData[0]);
-    } else {
-      console.log("Error");
+      console.log(res.status);
+      console.log(geoData);
+      if (res.status === 200 && !geoData[0]) {
+        setError(true);
+      } else if (res.status === 200) {
+        let currentLocation = {
+          country: data.country,
+          state: data.state,
+          city: geoData[0].name
+        };
+        setNewLocation(currentLocation);
+        getCurrentWeather(geoData[0]);
+        getForecast(geoData[0]);
+      } else {
+        setError(true);
+      }
     }
   };
   const getCurrentWeather = async (geoData) => {
@@ -27298,8 +27348,11 @@ var App = () => {
     const req = `${endpoint}/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&appid=${key}`;
     const res = await fetch(req);
     const currentData = await res.json();
-    setWeather(currentData);
-    console.log(weather);
+    if (res.status === 200) {
+      setWeather(currentData);
+    } else {
+      setError(true);
+    }
   };
   const getForecast = async (geoData) => {
     const latitude = geoData.lat;
@@ -27307,35 +27360,45 @@ var App = () => {
     const req = `${endpoint}/data/2.5/forecast?lat=${latitude}&lon=${longitude}&units=imperial&appid=${key}`;
     const res = await fetch(req);
     const forecastData = await res.json();
-    setForecast(forecastData);
-    console.log(forecast);
-    setShowOutput(true);
+    if (res.status === 200) {
+      setForecast(forecastData);
+      setShowOutput(true);
+    } else {
+      setError(true);
+    }
   };
-  return jsx_dev_runtime13.jsxDEV("div", {
-    className: "body-container",
+  return jsx_dev_runtime14.jsxDEV("div", {
+    className: "body-container relative",
     children: [
-      jsx_dev_runtime13.jsxDEV(PageHeader_default, {
+      jsx_dev_runtime14.jsxDEV(PageHeader_default, {
         showOutput,
-        newLocation
+        newLocation,
+        error
       }, undefined, false, undefined, this),
-      jsx_dev_runtime13.jsxDEV(PageMain_default, {
+      jsx_dev_runtime14.jsxDEV(PageMain_default, {
         showOutput,
         inputs,
         newLocation,
         handleInputsChange,
         handleSearchButton,
         weather,
-        forecast
+        forecast,
+        error
       }, undefined, false, undefined, this),
-      jsx_dev_runtime13.jsxDEV(PageFooter_default, {}, undefined, false, undefined, this)
+      jsx_dev_runtime14.jsxDEV(PageFooter_default, {
+        error
+      }, undefined, false, undefined, this),
+      error && jsx_dev_runtime14.jsxDEV(Modal_default, {
+        setError
+      }, undefined, false, undefined, this)
     ]
   }, undefined, true, undefined, this);
 };
 var App_default = App;
 
 // src/main.tsx
-var jsx_dev_runtime14 = __toESM(require_jsx_dev_runtime(), 1);
+var jsx_dev_runtime15 = __toESM(require_jsx_dev_runtime(), 1);
 Promise.resolve().then(() => __toESM(require_preline(), 1));
 var container = document.getElementById("root");
 var root = client.createRoot(container);
-root.render(jsx_dev_runtime14.jsxDEV(App_default, {}, undefined, false, undefined, this));
+root.render(jsx_dev_runtime15.jsxDEV(App_default, {}, undefined, false, undefined, this));

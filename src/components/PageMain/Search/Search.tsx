@@ -1,10 +1,10 @@
 import NewLocation from "./NewLocation";
 
 const Search = ({
-  showOutput,
   handleInputsChange,
   inputs,
   handleSearchButton,
+  error
 }: any) => {
   return (
     <aside
@@ -20,6 +20,7 @@ const Search = ({
             handleInputsChange={handleInputsChange}
             inputs={inputs}
             handleSearchButton={handleSearchButton}
+            error={error}
           />
         </section>
       </div>

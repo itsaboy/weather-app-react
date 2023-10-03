@@ -105,3 +105,12 @@
     gap: 0.5rem;
     place-items: center;
 }
+
+.modal-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4.25rem repeat(2, 1fr);
+    place-items: center;
+    height: 100%;
+    margin: 0 auto;
+}
