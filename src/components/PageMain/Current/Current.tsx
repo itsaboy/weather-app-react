@@ -39,6 +39,12 @@ const Current = ({ weather }: any) => {
           {weather.weather[0].main === "Haze" && (
             <img className="w-20" src="/public/icons/hazy.svg" />
           )}
+          {weather.weather[0].main === "Fog" && (
+            <img className="w-20" src="/public/icons/foggy.svg" />
+          )}
+          {weather.weather[0].main === "Drizzle" && (
+            <img className="w-20" src="/public/icons/drizzle.svg" />
+          )}
           <h3 className="text-xl text-slate-950">
             {`Temp: ${weather.main.temp.toFixed(0)}° F`}
           </h3>

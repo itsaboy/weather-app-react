@@ -26790,6 +26790,14 @@ var Current = ({ weather }) => {
               className: "w-20",
               src: "/public/icons/hazy.svg"
             }, undefined, false, undefined, this),
+            weather.weather[0].main === "Fog" && jsx_dev_runtime4.jsxDEV("img", {
+              className: "w-20",
+              src: "/public/icons/foggy.svg"
+            }, undefined, false, undefined, this),
+            weather.weather[0].main === "Drizzle" && jsx_dev_runtime4.jsxDEV("img", {
+              className: "w-20",
+              src: "/public/icons/drizzle.svg"
+            }, undefined, false, undefined, this),
             jsx_dev_runtime4.jsxDEV("h3", {
               className: "text-xl text-slate-950",
               children: `Temp: ${weather.main.temp.toFixed(0)}\xB0 F`
@@ -26863,6 +26871,14 @@ var ForecastDayOne = ({ forecast, weather }) => {
           className: "w-12",
           src: "/public/icons/hazy.svg"
         }, undefined, false, undefined, this),
+        forecast.list[0].main === "Fog" && jsx_dev_runtime5.jsxDEV("img", {
+          className: "w-12",
+          src: "/public/icons/foggy.svg"
+        }, undefined, false, undefined, this),
+        forecast.list[0].main === "Drizzle" && jsx_dev_runtime5.jsxDEV("img", {
+          className: "w-12",
+          src: "/public/icons/drizzle.svg"
+        }, undefined, false, undefined, this),
         jsx_dev_runtime5.jsxDEV("h3", {
           children: `Temp: ${forecast.list[0].main.temp.toFixed(0)}\xB0 F`
         }, undefined, false, undefined, this),
@@ -26929,6 +26945,14 @@ var ForecastDayTwo = ({ forecast, weather }) => {
         forecast.list[1].weather[0].main === "Haze" && jsx_dev_runtime6.jsxDEV("img", {
           className: "w-12",
           src: "/public/icons/hazy.svg"
+        }, undefined, false, undefined, this),
+        forecast.list[1].main === "Fog" && jsx_dev_runtime6.jsxDEV("img", {
+          className: "w-12",
+          src: "/public/icons/foggy.svg"
+        }, undefined, false, undefined, this),
+        forecast.list[1].main === "Drizzle" && jsx_dev_runtime6.jsxDEV("img", {
+          className: "w-12",
+          src: "/public/icons/drizzle.svg"
         }, undefined, false, undefined, this),
         jsx_dev_runtime6.jsxDEV("h3", {
           children: `Temp: ${forecast.list[1].main.temp.toFixed(0)}\xB0 F`
@@ -26997,6 +27021,14 @@ var ForecastDayThree = ({ forecast, weather }) => {
           className: "w-12",
           src: "/public/icons/hazy.svg"
         }, undefined, false, undefined, this),
+        forecast.list[2].main === "Fog" && jsx_dev_runtime7.jsxDEV("img", {
+          className: "w-12",
+          src: "/public/icons/foggy.svg"
+        }, undefined, false, undefined, this),
+        forecast.list[2].main === "Drizzle" && jsx_dev_runtime7.jsxDEV("img", {
+          className: "w-12",
+          src: "/public/icons/drizzle.svg"
+        }, undefined, false, undefined, this),
         jsx_dev_runtime7.jsxDEV("h3", {
           children: `Temp: ${forecast.list[2].main.temp.toFixed(0)}\xB0 F`
         }, undefined, false, undefined, this),
@@ -27064,6 +27096,14 @@ var ForecastDayFour = ({ forecast, weather }) => {
           className: "w-12",
           src: "/public/icons/hazy.svg"
         }, undefined, false, undefined, this),
+        forecast.list[3].main === "Fog" && jsx_dev_runtime8.jsxDEV("img", {
+          className: "w-12",
+          src: "/public/icons/foggy.svg"
+        }, undefined, false, undefined, this),
+        forecast.list[3].main === "Drizzle" && jsx_dev_runtime8.jsxDEV("img", {
+          className: "w-12",
+          src: "/public/icons/drizzle.svg"
+        }, undefined, false, undefined, this),
         jsx_dev_runtime8.jsxDEV("h3", {
           children: `Temp: ${forecast.list[3].main.temp.toFixed(0)}\xB0 F`
         }, undefined, false, undefined, this),
@@ -27130,6 +27170,14 @@ var ForecastDayFive = ({ forecast, weather }) => {
         forecast.list[4].weather[0].main === "Haze" && jsx_dev_runtime9.jsxDEV("img", {
           className: "w-12",
           src: "/public/icons/hazy.svg"
+        }, undefined, false, undefined, this),
+        forecast.list[4].main === "Fog" && jsx_dev_runtime9.jsxDEV("img", {
+          className: "w-12",
+          src: "/public/icons/foggy.svg"
+        }, undefined, false, undefined, this),
+        forecast.list[4].main === "Drizzle" && jsx_dev_runtime9.jsxDEV("img", {
+          className: "w-12",
+          src: "/public/icons/drizzle.svg"
         }, undefined, false, undefined, this),
         jsx_dev_runtime9.jsxDEV("h3", {
           children: `Temp: ${forecast.list[4].main.temp.toFixed(0)}\xB0 F`

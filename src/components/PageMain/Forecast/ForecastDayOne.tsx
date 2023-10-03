@@ -40,6 +40,12 @@ const ForecastDayOne = ({ forecast, weather }: any) => {
         {forecast.list[0].weather[0].main === "Haze" && (
           <img className="w-12" src="/public/icons/hazy.svg" />
         )}
+        {forecast.list[0].main === "Fog" && (
+          <img className="w-12" src="/public/icons/foggy.svg" />
+        )}
+        {forecast.list[0].main === "Drizzle" && (
+          <img className="w-12" src="/public/icons/drizzle.svg" />
+        )}
         <h3>{`Temp: ${forecast.list[0].main.temp.toFixed(0)}° F`}</h3>
         <h3>{`Feels: ${forecast.list[0].main.feels_like.toFixed(0)}° F`}</h3>
         <h3>{`Humidity: ${forecast.list[0].main.humidity}%`}</h3>
