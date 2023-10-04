@@ -27347,7 +27347,7 @@ var App = () => {
     getData(inputs);
   };
   const getData = async (data) => {
-    const req = `https://www.api-of-all-trades.net?city=${data.city}&state=${data.state}&country=${data.country}`;
+    const req = `https://www.api-of-all-trades.net/weather?city=${data.city}&state=${data.state}&country=${data.country}`;
     const res = await fetch(req);
     const geoData = await res.json();
     if (res.status === 200) {
