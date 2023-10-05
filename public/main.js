@@ -27350,31 +27350,32 @@ var App = () => {
     const req = `https://www.api-of-all-trades.net/weather?city=${data.city}&state=${data.state}&country=${data.country}`;
     const res = await fetch(req);
     const geoData = await res.json();
+    let currentLocation = {
+      country: "",
+      state: "",
+      city: ""
+    };
     if (res.status === 200) {
       if (geoData[0] === "") {
         setShowOutput(false);
         setError(true);
       } else if (geoData[0].country === "USA") {
-        let currentLocation = {
+        currentLocation = {
           country: geoData[0].country,
           state: geoData[0].state,
           city: geoData[0].city
         };
-        setNewLocation(currentLocation);
-        setWeather(geoData[1]);
-        setForecast(geoData[2]);
-        setShowOutput(true);
       } else if (geoData[0].country !== "USA") {
-        let currentLocation = {
+        currentLocation = {
           country: geoData[0].country,
           state: null,
           city: geoData[0].city
         };
-        setNewLocation(currentLocation);
-        setWeather(geoData[1]);
-        setForecast(geoData[2]);
-        setShowOutput(true);
       }
+      setNewLocation(currentLocation);
+      setWeather(geoData[1]);
+      setForecast(geoData[2]);
+      setShowOutput(true);
     } else {
       setShowOutput(false);
       setError(true);

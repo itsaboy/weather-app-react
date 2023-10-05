@@ -4,6 +4,12 @@ import PageMain from "./components/PageMain";
 import PageFooter from "./components/PageFooter";
 import Modal from "./components/Modal";
 
+type Location = {
+  country: string,
+  state: string | null,
+  city: string
+}
+
 const App = () => {
   // state management
   const [inputs, setInputs] = useState({
@@ -12,15 +18,15 @@ const App = () => {
     city: "",
   });
 
-  const [showOutput, setShowOutput] = useState(false);
+  const [showOutput, setShowOutput] = useState(false as boolean);
 
-  const [newLocation, setNewLocation] = useState({});
+  const [newLocation, setNewLocation] = useState({} as Location);
 
   const [weather, setWeather] = useState([] as string[]);
 
   const [forecast, setForecast] = useState([] as string[]);
 
-  const [error, setError] = useState(false);
+  const [error, setError] = useState(false as boolean);
 
   // handlers
   const handleInputsChange = (event: any) => {
@@ -44,33 +50,36 @@ const App = () => {
     const res = await fetch(req);
     const geoData = await res.json();
 
+    let currentLocation: Location = {
+      country: "",
+      state: "",
+      city: "",
+      //id: crypto.randomUUID().toString(),
+    };
+
     if (res.status === 200) {
       if (geoData[0] === "") {
         setShowOutput(false);
         setError(true);
       } else if (geoData[0].country === "USA") {
-        let currentLocation = {
+        currentLocation = {
           country: geoData[0].country,
           state: geoData[0].state,
           city: geoData[0].city,
           //id: crypto.randomUUID().toString(),
         };
-        setNewLocation(currentLocation);
-        setWeather(geoData[1]);
-        setForecast(geoData[2]);
-        setShowOutput(true);
       } else if (geoData[0].country !== "USA") {
-        let currentLocation = {
+        currentLocation = {
           country: geoData[0].country,
           state: null,
           city: geoData[0].city,
           //id: crypto.randomUUID().toString(),
         };
-        setNewLocation(currentLocation);
-        setWeather(geoData[1]);
-        setForecast(geoData[2]);
-        setShowOutput(true);
       }
+      setNewLocation(currentLocation);
+      setWeather(geoData[1]);
+      setForecast(geoData[2]);
+      setShowOutput(true);
     } else {
       setShowOutput(false);
       setError(true);
